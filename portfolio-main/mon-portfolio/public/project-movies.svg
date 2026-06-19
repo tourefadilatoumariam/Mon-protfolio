@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#111827"/>
+  <rect x="135" y="110" width="930" height="580" rx="36" fill="#fff" opacity=".08"/>
+  <rect x="200" y="170" width="260" height="390" rx="26" fill="#d4a0b0" opacity=".65"/>
+  <rect x="505" y="170" width="205" height="170" rx="24" fill="#fff" opacity=".15"/>
+  <rect x="750" y="170" width="205" height="170" rx="24" fill="#fff" opacity=".15"/>
+  <rect x="505" y="390" width="450" height="70" rx="22" fill="#fff" opacity=".13"/>
+  <rect x="505" y="500" width="300" height="42" rx="21" fill="#a0d4b4" opacity=".75"/>
+  <circle cx="330" cy="365" r="78" fill="none" stroke="#fff" stroke-width="28" opacity=".52"/>
+  <text x="200" y="635" fill="#fff" font-family="Inter, Arial" font-size="54" font-weight="700">Movie App</text>
+</svg>
