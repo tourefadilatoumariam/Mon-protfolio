@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.sec-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #d4a0b0;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sec-label {
+    font-size: 12px;
+  }
+}
+
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.25rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .sec-title {
+    font-size: 3rem;
+  }
+}
+
+.sec-divider {
+  width: 4rem;
+  height: 2px;
+  background: linear-gradient(to right, #d4a0b0, transparent);
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .sec-divider {
+    margin-bottom: 4rem;
+  }
+}
+
+.form-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 0.625rem;
+}
+
+.form-input {
+  width: 100%;
+  background-color: rgba(26, 20, 25, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  padding: 0.875rem 1rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.form-input:focus {
+  border-color: rgba(212, 160, 176, 0.6);
+  box-shadow: 0 0 0 1px rgba(212, 160, 176, 0.3);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.08);
+    opacity: 0.16;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(calc(-50% - 10px)) translateX(-4px);
+  }
+}
+
+.animate-fade-up,
+.animate-fade-up-delay-1,
+.animate-fade-up-delay-2,
+.animate-fade-up-delay-3,
+.animate-fade-up-delay-4,
+.animate-card-in {
+  animation-fill-mode: both;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 0.7s ease-out 0.08s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 0.75s ease-out 0.16s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeUp 0.75s ease-out 0.24s both;
+}
+
+.animate-fade-up-delay-4 {
+  animation: fadeUp 0.75s ease-out 0.32s both;
+}
+
+.animate-card-in {
+  animation: cardIn 0.65s ease-out both;
+}
+
+.animate-soft-pulse {
+  animation: softPulse 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 5.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

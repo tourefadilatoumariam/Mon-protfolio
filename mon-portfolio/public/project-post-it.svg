@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0d1f1e"/>
+  <rect x="250" y="80" width="700" height="640" rx="54" fill="#fff" opacity=".1"/>
+  <rect x="310" y="145" width="580" height="86" rx="28" fill="#a0d4b4" opacity=".8"/>
+  <rect x="330" y="290" width="230" height="180" rx="24" fill="#f5d98b"/>
+  <rect x="610" y="290" width="230" height="180" rx="24" fill="#d4a0b0"/>
+  <rect x="330" y="510" width="230" height="130" rx="24" fill="#a0b4d4"/>
+  <rect x="610" y="510" width="230" height="130" rx="24" fill="#a0d4b4"/>
+  <path d="M370 345h120M370 390h150M650 345h110M650 390h130M370 560h120M650 560h125" stroke="#17201e" stroke-width="16" stroke-linecap="round" opacity=".5"/>
+  <text x="310" y="690" fill="#fff" font-family="Inter, Arial" font-size="54" font-weight="700">Post-it</text>
+</svg>
