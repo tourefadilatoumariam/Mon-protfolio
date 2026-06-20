@@ -22,7 +22,7 @@ onUnmounted(() => clearInterval(timer))
       <div
         v-for="(slide, i) in slides"
         :key="i"
-        class="relative min-w-full h-full flex items-center">
+        class="relative min-w-full h-full flex items-center pt-[72px] lg:pt-[64px]">
        
         <div class="absolute inset-0" :style="{ background: slide.bg }"></div>
         <div class="absolute inset-0 bg-black/40"></div>
@@ -33,17 +33,24 @@ onUnmounted(() => clearInterval(timer))
           :style="{ background: slide.accent }"></div>
 
         <div class="relative z-10 px-6 sm:px-12 md:px-20 max-w-2xl animate-fade-up">
-          <p class="text-xs font-semibold tracking-[.2em] uppercase text-rose mb-5 flex items-center gap-3 animate-fade-up-delay-1">
+          <!-- Photo de profil sur mobile -->
+          <div class="lg:hidden mb-5">
+            <div class="w-20 h-20 rounded-2xl overflow-hidden border border-white/15 shadow-xl" :style="{ background: slide.photoGradient }">
+              <img src="/maTof.jpeg" class="w-full h-full object-cover" alt="Portrait de Toure Fadilatou Mariam">
+            </div>
+          </div>
+
+          <p class="text-[10px] lg:text-xs font-semibold tracking-[.2em] uppercase text-rose mb-3 lg:mb-5 flex items-center gap-3 animate-fade-up-delay-1">
             <span class="w-8 h-px bg-rose"></span>{{ slide.tag }}
           </p>
           <h1
-            class="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.05] text-white mb-6 animate-fade-up-delay-2"
+            class="font-serif text-3xl sm:text-5xl md:text-6xl leading-[1.1] text-white mb-4 lg:mb-6 animate-fade-up-delay-2"
             v-html="slide.title">
           </h1>
-          <p class="text-white/55 text-base md:text-lg leading-relaxed mb-10 font-light max-w-md animate-fade-up-delay-3">
+          <p class="text-white/55 text-xs sm:text-base md:text-lg leading-relaxed mb-6 lg:mb-10 font-light max-w-md animate-fade-up-delay-3">
             {{ slide.desc }}
           </p>
-          <div class="flex flex-wrap gap-4 animate-fade-up-delay-4">
+          <div class="flex flex-wrap gap-3 lg:gap-4 animate-fade-up-delay-4">
             <!-- CTA 1 -->
             <button
               v-if="slide.cta1.isCv"
@@ -72,7 +79,7 @@ onUnmounted(() => clearInterval(timer))
           </div>
         </div>
 
-        <div class="absolute right-8 lg:right-20 top-1/2 -translate-y-1/2 hidden lg:block animate-float-slow">
+        <div class="absolute right-8 lg:right-20 top-[calc(50%+115px)] -translate-y-1/2 hidden lg:block animate-float-slow">
           <div
             class="w-64 h-80 xl:w-72 xl:h-[340px] rounded-3xl overflow-hidden
              border border-white/10 shadow-2xl"  :style="{ background: slide.photoGradient }">

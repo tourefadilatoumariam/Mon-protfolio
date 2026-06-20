@@ -17,6 +17,11 @@ export const downloadCV = async () => {
     tempContainer.style.position = 'fixed'
     tempContainer.style.left = '-9999px'
     tempContainer.style.top = '-9999px'
+    
+    // Supprimer les marges et ombres d'écran pour forcer une seule page PDF
+    element.style.margin = '0'
+    element.style.boxShadow = 'none'
+    
     tempContainer.appendChild(element)
     
     // Copier les styles de cv.html

@@ -1,7 +1,7 @@
 <template>
   <section id="about" class="px-6 sm:px-10 py-20 md:py-28">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-start">
-      <div>
+      <div v-reveal="{ direction: 'left' }">
         <p class="sec-label">Technologies</p>
         <h2 class="sec-title">Competences</h2>
         <div class="sec-divider"></div>
@@ -72,7 +72,7 @@
         </TransitionGroup>
       </div>
 
-      <div>
+      <div v-reveal="{ direction: 'right', delay: 100 }">
         <p class="sec-label">A propos</p>
         <h2 class="sec-title">
           Developpeuse<br>

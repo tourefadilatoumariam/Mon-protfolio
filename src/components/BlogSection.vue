@@ -7,8 +7,9 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <article
-          v-for="post in posts"
+          v-for="(post, i) in posts"
           :key="post.title"
+          v-reveal="{ delay: i * 100 }"
           class="group bg-[#1a1419] border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,.4)] transition-all duration-300"
         >
           <div class="h-44 md:h-48 relative overflow-hidden" :style="{ background: post.bg }">

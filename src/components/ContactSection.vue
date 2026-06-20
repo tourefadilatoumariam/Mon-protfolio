@@ -1,7 +1,7 @@
 <template>
   <section id="contact" class="px-6 sm:px-10 py-20 md:py-28">
     <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 md:gap-20">
-      <div>
+      <div v-reveal="{ direction: 'left' }">
         <p class="sec-label">Parlons-en</p>
         <h2 class="sec-title">Me contacter</h2>
         <div class="sec-divider"></div>
@@ -62,6 +62,7 @@
       <form
         @submit.prevent="handleSubmit"
         novalidate
+        v-reveal="{ direction: 'right', delay: 100 }"
         class="bg-[#1a1419]/40 border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col gap-4 shadow-xl backdrop-blur-md"
       >
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">

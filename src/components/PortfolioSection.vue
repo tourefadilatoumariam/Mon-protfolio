@@ -21,10 +21,10 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         <article
-          v-for="(proj, i) in filteredProjects"
+          v-for="(proj, i) in paginatedProjects"
           :key="proj.title"
-          class="group animate-card-in overflow-hidden rounded-2xl border border-white/8 bg-[#1a1419] transition-all duration-300 hover:-translate-y-1 hover:border-rose/25 hover:shadow-[0_20px_60px_rgba(212,160,176,0.08)]"
-          :style="{ animationDelay: `${i * 90}ms` }"
+          v-reveal="{ delay: i * 80 }"
+          class="group overflow-hidden rounded-2xl border border-white/8 bg-[#1a1419] transition-all duration-300 hover:-translate-y-1 hover:border-rose/25 hover:shadow-[0_20px_60px_rgba(212,160,176,0.08)]"
         >
           <a
             :href="projectHref(proj)"
@@ -81,16 +81,58 @@
           </div>
         </article>
       </div>
+
+      <!-- Pagination Controls -->
+      <div v-if="totalPages > 1" class="flex justify-center items-center gap-3 mt-12 animate-fade-up">
+        <button
+          @click="currentPage > 1 && (currentPage--)"
+          :disabled="currentPage === 1"
+          class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-rose/30 hover:text-rose transition-all disabled:opacity-30 disabled:pointer-events-none"
+          aria-label="Page précédente"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+        
+        <button
+          v-for="page in totalPages"
+          :key="page"
+          @click="currentPage = page"
+          class="w-10 h-10 rounded-full border text-xs font-semibold transition-all"
+          :class="currentPage === page
+            ? 'bg-rose border-rose text-[#0e0c0d]'
+            : 'border-white/10 text-white/50 hover:border-white/20 hover:text-white'"
+        >
+          {{ page }}
+        </button>
+
+        <button
+          @click="currentPage < totalPages && (currentPage++)"
+          :disabled="currentPage === totalPages"
+          class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-rose/30 hover:text-rose transition-all disabled:opacity-30 disabled:pointer-events-none"
+          aria-label="Page suivante"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { projects, filterCategories } from '../data/portfolio.js'
 
 const categories = filterCategories
 const active = ref('Tous')
+
+// Pagination
+const currentPage = ref(1)
+const itemsPerPage = 3
+
+// Réinitialiser la page quand la catégorie change
+watch(active, () => {
+  currentPage.value = 1
+})
 
 function projectHref(project) {
   return project.liveUrl || '#contact'
@@ -101,4 +143,11 @@ const filteredProjects = computed(() =>
     ? projects
     : projects.filter(p => p.cat === active.value)
 )
+
+const totalPages = computed(() => Math.ceil(filteredProjects.value.length / itemsPerPage))
+
+const paginatedProjects = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  return filteredProjects.value.slice(start, start + itemsPerPage)
+})
 </script>

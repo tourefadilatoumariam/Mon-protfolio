@@ -170,6 +170,36 @@ body {
   animation: floatSlow 5.5s ease-in-out infinite;
 }
 
+/* ─── SCROLL REVEAL ANIMATIONS ──────────────────────────────── */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translateY(0) scale(1) translateX(0) !important;
+}
+
+.reveal-init.reveal-left {
+  transform: translateX(-35px);
+}
+
+.reveal-init.reveal-right {
+  transform: translateX(35px);
+}
+
+.reveal-init.reveal-down {
+  transform: translateY(-30px);
+}
+
+.reveal-init.reveal-scale {
+  transform: scale(0.94);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -178,5 +208,12 @@ body {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
+

@@ -4,8 +4,8 @@
     <div
       v-for="(stat, i) in stats"
       :key="stat.label"
-      class="animate-card-in text-center"
-      :style="{ animationDelay: `${i * 80}ms` }"
+      v-reveal="{ delay: i * 80 }"
+      class="text-center"
     >
       <div class="font-serif text-3xl md:text-4xl text-rose transition-transform duration-300 hover:scale-110">{{ stat.value }}</div>
       <div class="text-[10px] md:text-xs tracking-widest uppercase text-white/35 mt-1">{{ stat.label }}</div>

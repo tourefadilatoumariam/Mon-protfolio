@@ -2,9 +2,10 @@
   <!-- NAVBAR-->
   <nav
     class="fixed top-0 inset-x-0 z-50 flex items-center justify-between
-           px-6 md:px-10 h-[64px]
-           bg-[#0e0c0d]/85 backdrop-blur-md
-           border-b border-white/5 transition-all"
+           px-6 md:px-10 transition-all duration-300"
+    :class="isScrolled 
+      ? 'h-[56px] bg-[#0e0c0d]/95 backdrop-blur-lg border-b border-rose/15 shadow-[0_10px_30px_rgba(0,0,0,0.3)]' 
+      : 'h-[64px] bg-[#0e0c0d]/80 backdrop-blur-md border-b border-white/5'"
   >
     <!-- Logo -->
     <a href="#home" class="font-serif text-xl tracking-tight shrink-0">
@@ -62,7 +63,7 @@
     >
       <div
         v-if="menuOpen"
-        class="absolute top-[64px] inset-x-0 bg-[#130f12] border-b border-white/5
+        class="absolute top-full inset-x-0 bg-[#130f12] border-b border-white/5
                flex flex-col px-6 py-5 gap-4 md:hidden"
       >
         <a
@@ -84,10 +85,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { navLinks } from '../data/portfolio.js'
 
 defineProps({ activeSection: { type: String, default: 'home' } })
 
 const menuOpen = ref(false)
+const isScrolled = ref(false)
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 20
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>

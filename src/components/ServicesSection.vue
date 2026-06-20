@@ -10,9 +10,10 @@
       <!-- Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         <div
-          v-for="svc in services"
+          v-for="(svc, i) in services"
           :key="svc.title"
-          class="group animate-card-in relative overflow-hidden bg-[#1a1419]/40 border border-white/5 rounded-2xl p-7
+          v-reveal="{ delay: i * 100 }"
+          class="group relative overflow-hidden bg-[#1a1419]/40 border border-white/5 rounded-2xl p-7
                  hover:-translate-y-2 hover:border-rose/25 hover:bg-[#1a1419]/75
                  hover:shadow-[0_20px_60px_rgba(212,160,176,0.05)]
                  transition-all duration-300 cursor-default backdrop-blur-sm"
@@ -40,10 +41,6 @@
           </div>
           <h4 class="font-semibold text-white text-[15px] mb-3">{{ svc.title }}</h4>
           <p class="text-white/40 text-sm leading-relaxed">{{ svc.desc }}</p>
-          <span class="mt-5 text-xs font-semibold text-rose flex items-center gap-1
-                       group-hover:gap-2 transition-all">
-            En savoir plus <span>→</span>
-          </span>
         </div>
       </div>
     </div>

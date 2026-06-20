@@ -1,6 +1,7 @@
 <template>
   <!-- ─── HIRE BANNER ──────────────────────────────────────── -->
   <div
+    v-reveal
     class="bg-[#1a1419] border-t border-rose/8
            px-6 sm:px-10 py-12 md:py-16
            flex flex-col md:flex-row items-center justify-between gap-8"
