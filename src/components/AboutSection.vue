@@ -80,10 +80,10 @@
         </h2>
         <div class="sec-divider"></div>
 
-        <p class="text-white/48 text-[15px] leading-[1.85] mb-4 font-light">
+        <p class="text-white/80 text-[15px] leading-[1.85] mb-4 font-light">
           Etudiante en informatique, je m'interesse au developpement web, aux APIs et aux interfaces qui rendent un service simple a utiliser. J'aime comprendre le besoin avant de coder, puis avancer avec methode.
         </p>
-        <p class="text-white/48 text-[15px] leading-[1.85] font-light">
+        <p class="text-white/80 text-[15px] leading-[1.85] font-light">
           Je recherche une opportunite de stage, d'alternance ou de premier emploi pour contribuer sur des projets concrets, renforcer mes pratiques professionnelles et progresser au contact d'une equipe.
         </p>
 

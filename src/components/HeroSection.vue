@@ -47,7 +47,7 @@ onUnmounted(() => clearInterval(timer))
             class="font-serif text-3xl sm:text-5xl md:text-6xl leading-[1.1] text-white mb-4 lg:mb-6 animate-fade-up-delay-2"
             v-html="slide.title">
           </h1>
-          <p class="text-white/55 text-xs sm:text-base md:text-lg leading-relaxed mb-6 lg:mb-10 font-light max-w-md animate-fade-up-delay-3">
+          <p class="text-white/80 text-xs sm:text-base md:text-lg leading-relaxed mb-6 lg:mb-10 font-light max-w-md animate-fade-up-delay-3">
             {{ slide.desc }}
           </p>
           <div class="flex flex-wrap gap-3 lg:gap-4 animate-fade-up-delay-4">

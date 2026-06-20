@@ -10,13 +10,13 @@
       <h2 class="font-serif text-2xl md:text-3xl text-white">
         Collaborons sur votre prochain projet
       </h2>
-      <p class="text-white/35 mt-2 font-light text-sm md:text-base">
+      <p class="text-white/70 mt-2 font-light text-sm md:text-base">
         Disponible pour missions freelance &amp; collaborations long terme
       </p>
     </div>
     <a
       href="tel:+2250713212936"
-      class="shrink-0 px-8 py-4 bg-rose text-[#0e0c0d] rounded-full font-bold text-sm
+      class="shrink-0 px-8 py-4 bg-rose text-white/70 rounded-full font-bold text-sm
              hover:bg-rose2 hover:-translate-y-1 active:scale-95 transition-all
              shadow-lg shadow-rose/20"
     >
@@ -57,7 +57,7 @@
   </footer>
 
   <!-- Copyright -->
-  <p class="text-center text-[11px] text-white/15 py-4 bg-[#0e0c0d]">
+  <p class="text-center text-[11px] text-white/40 py-4 bg-[#0e0c0d]">
     © 2025 Fadi Dev — Tous droits réservés
   </p>
 </template>

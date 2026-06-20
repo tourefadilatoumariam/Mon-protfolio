@@ -55,7 +55,7 @@
               </div>
 
               <h4 class="mb-3 text-xl font-semibold text-white">{{ proj.title }}</h4>
-              <p class="text-sm leading-relaxed text-white/62">{{ proj.desc }}</p>
+              <p class="text-sm leading-relaxed text-white/80">{{ proj.desc }}</p>
             </div>
 
             <div>

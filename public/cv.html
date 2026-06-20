@@ -2,37 +2,138 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - Toure Fadilatou Mariam</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --ink: #101114;
-      --muted: #5e6470;
-      --soft: #f6f1f3;
-      --line: #e8dfe4;
-      --accent: #c98098;
-      --accent-dark: #8f435e;
-    }
-
-    * {
-      box-sizing: border-box;
+    @page {
+      size: A4;
       margin: 0;
-      padding: 0;
     }
 
     body {
-      background: #ece7ea;
-      color: var(--ink);
-      font-family: 'Inter', Arial, sans-serif;
-      font-size: 10.8px;
-      line-height: 1.32;
-      print-color-adjust: exact;
-      -webkit-print-color-adjust: exact;
+      font-family: Calibri, Arial, sans-serif;
+      color: #101114;
+      font-size: 8.8pt;
+      line-height: 1.25;
     }
 
+    h1 {
+      margin: 0;
+      color: #8f435e;
+      font-size: 20pt;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    h2 {
+      margin: 8pt 0 4pt;
+      padding-bottom: 1.5pt;
+      border-bottom: 1pt solid #e8dfe4;
+      color: #8f435e;
+      font-size: 10.5pt;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 9.5pt;
+      font-weight: bold;
+      color: #101114;
+    }
+
+    p {
+      margin: 0 0 3pt;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3.5pt solid #c98098;
+      padding-bottom: 6pt;
+      margin-bottom: 8pt;
+    }
+
+    .header {
+      border: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .role {
+      color: #8f435e;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.8pt;
+      font-size: 9pt;
+    }
+
+    .contact {
+      margin-top: 3pt;
+      color: #5e6470;
+      font-size: 8.5pt;
+      line-height: 1.3;
+    }
+
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .grid {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .left {
+      width: 33%;
+      vertical-align: top;
+      padding-right: 12pt;
+      border-right: 1pt solid #e8dfe4;
+    }
+
+    .right {
+      width: 67%;
+      vertical-align: top;
+      padding-left: 12pt;
+    }
+
+    .muted {
+      color: #5e6470;
+      font-size: 8.5pt;
+      line-height: 1.25;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 2pt 2pt 0;
+      padding: 1.5pt 4.5pt;
+      border: 1pt solid #e8dfe4;
+      border-radius: 8pt;
+      background: #f6f1f3;
+      font-size: 8pt;
+    }
+
+    .item {
+      margin-bottom: 7pt;
+    }
+
+    .date {
+      color: #5e6470;
+      font-size: 8.5pt;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    
+    .photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      border: 1.5px solid #c98098;
+      object-fit: cover;
+    }
+
+    /* Conteneur d'affichage écran type A4 */
     .cv-container {
       width: 210mm;
       height: 297mm;
@@ -41,217 +142,8 @@
       box-shadow: 0 18px 60px rgba(16, 17, 20, .14);
       overflow: hidden;
       position: relative;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 98px;
-      gap: 18px;
-      align-items: center;
-      padding: 20px 30px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 84% 20%, rgba(201, 128, 152, .38), transparent 32%),
-        linear-gradient(135deg, #101114, #24151d 64%, #101114);
-      border-bottom: 5px solid var(--accent);
-    }
-
-    h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 32px;
-      line-height: .95;
-      letter-spacing: 0;
-    }
-
-    h1 span {
-      color: #efb3c5;
-    }
-
-    .role {
-      margin-top: 7px;
-      color: #efb3c5;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-
-    .pitch {
-      max-width: 520px;
-      margin-top: 9px;
-      color: rgba(255, 255, 255, .76);
-      font-size: 10.8px;
-    }
-
-    .photo {
-      width: 92px;
-      height: 92px;
-      border-radius: 22px;
-      border: 3px solid rgba(239, 179, 197, .8);
-      object-fit: cover;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 5px 14px;
-      margin-top: 10px;
-      color: rgba(255, 255, 255, .78);
-      font-size: 9.8px;
-    }
-
-    .contact a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .body {
-      display: grid;
-      grid-template-columns: 62mm 1fr;
-      min-height: 0;
-    }
-
-    aside {
-      background: var(--soft);
-      padding: 18px 18px;
-      border-right: 1px solid var(--line);
-    }
-
-    main {
-      padding: 18px 24px;
-    }
-
-    section + section {
-      margin-top: 13px;
-    }
-
-    h2 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
-      color: var(--accent-dark);
-      font-size: 10.5px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    h2::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      background: var(--line);
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-
-    .tag {
-      padding: 3px 6px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: #fff;
-      color: var(--ink);
-      font-size: 9.3px;
-      font-weight: 600;
-    }
-
-    .group-title {
-      margin: 8px 0 5px;
-      color: var(--muted);
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .info-list {
-      display: grid;
-      gap: 5px;
-    }
-
-    .info-list strong {
-      display: block;
-      color: var(--ink);
-      font-size: 9.8px;
-    }
-
-    .info-list span {
-      color: var(--muted);
-    }
-
-    .item {
-      position: relative;
-      padding-left: 13px;
-    }
-
-    .item + .item {
-      margin-top: 9px;
-    }
-
-    .item::before {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 0;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .item-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 2px;
-    }
-
-    h3 {
-      font-size: 11.6px;
-      font-weight: 800;
-    }
-
-    .date {
-      color: var(--muted);
-      font-size: 9.4px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .subtitle {
-      margin-bottom: 3px;
-      color: var(--accent-dark);
-      font-size: 10.2px;
-      font-weight: 700;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .project-type {
-      display: inline-block;
-      margin-bottom: 3px;
-      padding: 2px 6px;
-      border-radius: 999px;
-      background: rgba(201, 128, 152, .13);
-      color: var(--accent-dark);
-      font-size: 8.6px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .tech {
-      margin-top: 3px;
-      color: var(--ink);
-      font-size: 9.3px;
-      font-weight: 700;
+      padding: 0.8cm;
+      box-sizing: border-box;
     }
 
     @media print {
@@ -269,44 +161,36 @@
         height: 297mm;
         margin: 0;
         box-shadow: none;
+        padding: 0.8cm;
       }
     }
   </style>
 </head>
 <body>
   <div class="cv-container">
-    <header class="hero">
-      <div>
-        <h1>Toure <span>Fadilatou</span><br>Mariam</h1>
-        <div class="role">Developpeuse Fullstack Junior</div>
-        <p class="pitch">
-          Etudiante en informatique orientee developpement web et APIs. Je recherche un stage, une alternance ou une premiere opportunite junior pour contribuer a des produits utiles et bien documentes.
+    <div class="header-container">
+      <div class="header">
+        <h1>Touré Fadilatou Mariam</h1>
+        <p class="role">Développeuse Fullstack Junior</p>
+        <p class="contact">
+          Abidjan, Côte d'Ivoire | <a href="tel:+2250713212936">+225 07 13 21 29 36</a> | <a href="mailto:tourefadilatoumariam@gmail.com">tourefadilatoumariam@gmail.com</a><br>
+          <a href="https://github.com/">GitHub / Portfolio</a> | <a href="https://linkedin.com/in/">LinkedIn</a> | Disponible maintenant
         </p>
-        <div class="contact">
-          <span>Abidjan, Cote d'Ivoire</span>
-          <a href="tel:+2250713212936">+225 07 13 21 29 36</a>
-          <a href="mailto:tourefadilatoumariam@gmail.com">tourefadilatoumariam@gmail.com</a>
-          <a href="https://github.com/">GitHub / Portfolio</a>
-          <a href="https://linkedin.com/in/">LinkedIn</a>
-          <span>Disponible maintenant</span>
-        </div>
       </div>
-      <img class="photo" src="maTof.jpeg" alt="Portrait de Toure Fadilatou Mariam">
-    </header>
+      <img class="photo" src="maTof.jpeg" alt="Portrait de Touré Fadilatou Mariam">
+    </div>
 
-    <div class="body">
-      <aside>
-        <section>
+    <table class="grid">
+      <tr>
+        <td class="left">
           <h2>Profil</h2>
-          <p>
-            Curieuse, rigoureuse et a l'aise en equipe, je sais apprendre vite et transformer un besoin en interface fonctionnelle. Mes projets m'ont permis de pratiquer le frontend, le backend, le mobile et la conception UI.
+          <p style="text-align: justify;">
+            Étudiante en informatique orientée développement web et APIs. Je recherche un stage, une alternance ou une première opportunité junior pour contribuer à des produits utiles, propres et bien documentés.
           </p>
-        </section>
 
-        <section>
-          <h2>Competences</h2>
-          <div class="group-title">Frontend</div>
-          <div class="tags">
+          <h2>Compétences</h2>
+          <p style="margin-bottom: 2pt;"><strong>Frontend</strong></p>
+          <div style="margin-bottom: 4pt;">
             <span class="tag">Vue.js</span>
             <span class="tag">React</span>
             <span class="tag">Next.js</span>
@@ -315,8 +199,8 @@
             <span class="tag">Tailwind CSS</span>
           </div>
 
-          <div class="group-title">Backend</div>
-          <div class="tags">
+          <p style="margin-bottom: 2pt;"><strong>Backend</strong></p>
+          <div style="margin-bottom: 4pt;">
             <span class="tag">NestJS</span>
             <span class="tag">Laravel</span>
             <span class="tag">PHP</span>
@@ -324,8 +208,8 @@
             <span class="tag">API REST</span>
           </div>
 
-          <div class="group-title">Data & outils</div>
-          <div class="tags">
+          <p style="margin-bottom: 2pt;"><strong>Outils</strong></p>
+          <div style="margin-bottom: 4pt;">
             <span class="tag">MySQL</span>
             <span class="tag">MongoDB</span>
             <span class="tag">Git</span>
@@ -333,114 +217,94 @@
             <span class="tag">Postman</span>
             <span class="tag">Figma</span>
           </div>
-        </section>
 
-        <section>
           <h2>Langues</h2>
-          <div class="info-list">
-            <div><strong>Francais</strong><span>Courant</span></div>
-            <div><strong>Anglais</strong><span>Technique</span></div>
-          </div>
-        </section>
+          <p>Français : courant<br>Anglais : technique</p>
 
-        <section>
           <h2>Atouts</h2>
-          <div class="tags">
-            <span class="tag">Esprit d'equipe</span>
-            <span class="tag">Autonomie</span>
-            <span class="tag">Organisation</span>
-            <span class="tag">Sens du detail</span>
-          </div>
-        </section>
+          <p>Esprit d'équipe, autonomie, organisation, sens du détail.</p>
 
-        <section>
           <h2>Centres d'intérêt</h2>
-          <div class="tags">
-            <span class="tag">Veille technologique</span>
+          <div style="margin-top: 3pt;">
+            <span class="tag">Veille tech</span>
             <span class="tag">UI/UX Design</span>
             <span class="tag">Lecture</span>
             <span class="tag">Jeux d'échecs</span>
           </div>
-        </section>
-      </aside>
+        </td>
 
-      <main>
-        <section>
+        <td class="right">
           <h2>Formations</h2>
           <div class="item">
-            <div class="item-head">
-              <h3>Licence 2 E-administration & Transformation Digitale</h3>
-              <span class="date">2024 - Present</span>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+              <h3>Licence 2 E-administration</h3>
+              <span class="date">2024 - Présent</span>
             </div>
-            <div class="subtitle">Universite Virtuelle de Cote d'Ivoire</div>
-            <p>Systemes d'information, services numeriques, web et transformation digitale.</p>
+            <p class="muted" style="margin-bottom: 1px; font-weight: bold; color: #8f435e;">Université Virtuelle de Côte d'Ivoire</p>
+            <p class="muted" style="margin-bottom: 0;">Transformation digitale, services numériques, web.</p>
           </div>
 
           <div class="item">
-            <div class="item-head">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
               <h3>Formation Coding Fullstack</h3>
               <span class="date">2026</span>
             </div>
-            <div class="subtitle">WeCode - Coding by Epitech</div>
-            <p>Projet en equipe, algorithmie, frontend, backend et methodes de travail agiles.</p>
+            <p class="muted" style="margin-bottom: 1px; font-weight: bold; color: #8f435e;">WeCode - Coding by Epitech</p>
+            <p class="muted" style="margin-bottom: 0;">Projets en équipe, algorithmie, frontend, backend et méthodes agiles.</p>
           </div>
 
           <div class="item">
-            <div class="item-head">
-              <h3>Formation Developpeuse Fullstack</h3>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+              <h3>Formation Développeuse Fullstack</h3>
               <span class="date">2025</span>
             </div>
-            <div class="subtitle">DigiFemmes Academy</div>
-            <p>Bases solides en developpement web, UI/UX, collaboration et presentation de projets.</p>
+            <p class="muted" style="margin-bottom: 1px; font-weight: bold; color: #8f435e;">DigiFemmes Academy</p>
+            <p class="muted" style="margin-bottom: 0;">Bases solides de développement web, collaboration et présentations.</p>
           </div>
-        </section>
 
-        <section>
           <h2>Projets</h2>
+          
           <div class="item">
-            <span class="project-type">Projet de groupe</span>
-            <div class="item-head">
-              <h3>MY SHOP</h3>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+              <h3>MY SHOP <span style="font-size: 7.5pt; font-weight: normal; color: #8f435e; text-transform: uppercase;">• Groupe</span></h3>
               <span class="date">Web App</span>
             </div>
-            <p>Boutique e-commerce responsive avec catalogue, organisation des produits et parcours d'achat clair.</p>
-            <div class="tech">Vue.js, Tailwind CSS, JavaScript</div>
+            <p class="muted" style="margin-bottom: 1px;">Boutique e-commerce responsive avec catalogue et parcours d'achat.</p>
+            <p style="font-size: 8pt; margin-bottom: 0;"><strong>Stack :</strong> Vue.js, Tailwind CSS, JavaScript</p>
           </div>
 
           <div class="item">
-            <span class="project-type">Projet de groupe</span>
-            <div class="item-head">
-              <h3>FreeAds</h3>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+              <h3>FreeAds <span style="font-size: 7.5pt; font-weight: normal; color: #8f435e; text-transform: uppercase;">• Groupe</span></h3>
               <span class="date">Web App</span>
             </div>
-            <p>Plateforme de petites annonces avec espace utilisateur, publication d'offres et interface d'administration.</p>
-            <div class="tech">Laravel, PHP, MySQL</div>
+            <p class="muted" style="margin-bottom: 1px;">Plateforme de petites annonces avec espace membre et administration.</p>
+            <p style="font-size: 8pt; margin-bottom: 0;"><strong>Stack :</strong> Laravel, PHP, MySQL</p>
           </div>
 
           <div class="item">
-            <span class="project-type">Projet individuel</span>
-            <div class="item-head">
-              <h3>Post-it</h3>
-              <span class="date">Mobile / Frontend</span>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+              <h3>Post-it <span style="font-size: 7.5pt; font-weight: normal; color: #8f435e; text-transform: uppercase;">• Solo</span></h3>
+              <span class="date">Mobile / Front</span>
             </div>
-            <p>Application de notes pour creer, organiser et retrouver rapidement des pense-betes.</p>
-            <div class="tech">Vue.js, JavaScript, LocalStorage</div>
+            <p class="muted" style="margin-bottom: 1px;">Application web de notes pour créer et organiser des pense-bêtes.</p>
+            <p style="font-size: 8pt; margin-bottom: 0;"><strong>Stack :</strong> Vue.js, JavaScript, LocalStorage</p>
           </div>
 
           <div class="item">
-            <span class="project-type">Projet de groupe</span>
-            <div class="item-head">
-              <h3>Trelltech</h3>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+              <h3>Trelltech <span style="font-size: 7.5pt; font-weight: normal; color: #8f435e; text-transform: uppercase;">• Groupe</span></h3>
               <span class="date">Backend</span>
             </div>
-            <p>API REST modulaire avec authentification JWT et endpoints pour gerer des ressources collaboratives.</p>
-            <div class="tech">NestJS, TypeScript, MongoDB, JWT</div>
+            <p class="muted" style="margin-bottom: 1px;">API REST sécurisée avec authentification JWT et ressources partagées.</p>
+            <p style="font-size: 8pt; margin-bottom: 0;"><strong>Stack :</strong> NestJS, TypeScript, MongoDB, JWT</p>
           </div>
-        </section>
-      </main>
-    </div>
+        </td>
+      </tr>
+    </table>
+    
     <!-- Footer de pagination -->
-    <div style="position: absolute; bottom: 15px; right: 24px; color: var(--muted); font-size: 8px; font-weight: 500; letter-spacing: 0.05em;">
+    <div style="position: absolute; bottom: 15px; right: 24px; color: #5e6470; font-size: 8pt; font-weight: 500; letter-spacing: 0.05em; font-family: Calibri, Arial, sans-serif;">
       Page 1/1
     </div>
   </div>

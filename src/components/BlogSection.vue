@@ -2,7 +2,7 @@
   <section id="blog" class="bg-[#130f12] px-6 sm:px-10 py-20 md:py-28">
     <div class="max-w-6xl mx-auto">
       <p class="sec-label">Articles</p>
-      <h2 class="sec-title">Notes & apprentissages</h2>
+      <h2 class="sec-title">Blog & apprentissages</h2>
       <div class="sec-divider"></div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -21,7 +21,7 @@
           <div class="p-5 md:p-6">
             <p class="text-[10px] font-bold tracking-widest uppercase text-rose mb-2">{{ post.cat }}</p>
             <h3 class="font-semibold text-white text-[15px] leading-snug mb-3">{{ post.title }}</h3>
-            <p class="text-white/42 text-sm leading-relaxed">{{ post.excerpt }}</p>
+            <p class="text-white/70 text-sm leading-relaxed">{{ post.excerpt }}</p>
             <a
               href="#contact"
               class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-rose group-hover:gap-2 transition-all"

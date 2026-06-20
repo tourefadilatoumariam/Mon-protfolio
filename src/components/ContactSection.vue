@@ -11,7 +11,7 @@
           <span class="text-[11px] font-medium text-emerald-400 tracking-wide">Disponible pour stage, alternance ou mission</span>
         </div>
 
-        <p class="text-white/45 text-[15px] leading-relaxed mb-8 font-light">
+        <p class="text-white/75 text-[15px] leading-relaxed mb-8 font-light">
           Une opportunite, un projet ou une collaboration en tete ? Envoyez-moi quelques details et je vous repondrai rapidement.
         </p>
 
@@ -35,7 +35,7 @@
               </svg>
             </div>
             <div>
-              <div class="text-[10px] text-white/30 uppercase tracking-widest mb-0.5 font-semibold">{{ info.label }}</div>
+              <div class="text-[10px] text-white/50 uppercase tracking-widest mb-0.5 font-semibold">{{ info.label }}</div>
               <div class="text-sm font-medium text-white/80">{{ info.value }}</div>
             </div>
           </div>
@@ -107,8 +107,8 @@
 
         <div class="flex items-center justify-between gap-4 mt-1">
           <span class="text-[11px] text-white/20 font-light">* champs obligatoires</span>
-          <button type="submit" :disabled="loading" class="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed bg-rose text-[#0e0c0d] hover:bg-rose2">
-            <span>{{ loading ? 'Preparation...' : 'Envoyer ->' }}</span>
+          <button type="submit" :disabled="loading" class="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed bg-rose text-white/70 hover:bg-rose2">
+            <span>{{ loading ? 'Preparation...' : 'Envoyer' }}</span>
           </button>
         </div>
       </form>

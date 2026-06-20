@@ -40,7 +40,7 @@
             </svg>
           </div>
           <h4 class="font-semibold text-white text-[15px] mb-3">{{ svc.title }}</h4>
-          <p class="text-white/40 text-sm leading-relaxed">{{ svc.desc }}</p>
+          <p class="text-white/70 text-sm leading-relaxed">{{ svc.desc }}</p>
         </div>
       </div>
     </div>
