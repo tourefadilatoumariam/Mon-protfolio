@@ -34,12 +34,13 @@
             class="relative block aspect-[16/10] overflow-hidden"
             :aria-label="proj.title"
           >
-            <img
+            <LazyImage
               :src="proj.image"
               :alt="proj.title"
-              class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            >
+              cover
+              lazy
+              placeholder-bg="linear-gradient(135deg, #1a1419 0%, #2a1f26 100%)"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a1419] via-transparent to-transparent"></div>
             <span class="absolute left-4 top-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white/80 backdrop-blur">
               {{ proj.status }}
@@ -86,7 +87,7 @@
         <button
           @click="currentPage > 1 && (currentPage--)"
           :disabled="currentPage === 1"
-          class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-rose/30 hover:text-rose transition-all disabled:opacity-30 disabled:pointer-events-none"
+          class="w-10 h-10 sm:w-9 sm:h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-rose/30 hover:text-rose transition-all disabled:opacity-30 disabled:pointer-events-none"
           aria-label="Page precedente"
         >
           <span aria-hidden="true">&lt;</span>
@@ -96,7 +97,7 @@
           v-for="page in totalPages"
           :key="page"
           @click="currentPage = page"
-          class="w-10 h-10 rounded-full border text-xs font-semibold transition-all"
+          class="w-10 h-10 sm:w-9 sm:h-9 rounded-full border text-xs font-semibold transition-all"
           :class="currentPage === page
             ? 'bg-rose border-rose text-[#0e0c0d]'
             : 'border-white/10 text-white/50 hover:border-white/20 hover:text-white'"
@@ -107,7 +108,7 @@
         <button
           @click="currentPage < totalPages && (currentPage++)"
           :disabled="currentPage === totalPages"
-          class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-rose/30 hover:text-rose transition-all disabled:opacity-30 disabled:pointer-events-none"
+          class="w-10 h-10 sm:w-9 sm:h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:border-rose/30 hover:text-rose transition-all disabled:opacity-30 disabled:pointer-events-none"
           aria-label="Page suivante"
         >
           <span aria-hidden="true">&gt;</span>
@@ -120,6 +121,7 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { projects, filterCategories } from '../data/portfolio.js'
+import LazyImage from './LazyImage.vue'
 
 const categories = filterCategories
 const active = ref('Tous')

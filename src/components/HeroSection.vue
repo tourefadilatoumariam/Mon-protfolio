@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { slides } from '../data/portfolio.js'
 import { downloadCV } from '../utils/cv.js'
 import InteractiveCvModal from './InteractiveCvModal.vue'
+import LazyImage from './LazyImage.vue'
 
 const current = ref(0)
 const cvModalOpen = ref(false)
@@ -38,7 +39,7 @@ onUnmounted(() => clearInterval(timer))
           <!-- Photo de profil sur mobile -->
           <div class="lg:hidden mb-5">
             <div class="w-20 h-20 rounded-2xl overflow-hidden border border-white/15 shadow-xl" :style="{ background: slide.photoGradient }">
-              <img src="/maTof.jpeg" class="w-full h-full object-cover" alt="Portrait de Toure Fadilatou Mariam">
+              <LazyImage src="/maTof.jpeg" alt="Portrait de Toure Fadilatou Mariam" cover rounded="2xl" lazy/>
             </div>
           </div>
 
@@ -46,7 +47,7 @@ onUnmounted(() => clearInterval(timer))
             <span class="w-8 h-px bg-rose"></span>{{ slide.tag }}
           </p>
           <h1
-            class="font-serif text-3xl sm:text-5xl md:text-6xl leading-[1.1] text-white mb-4 lg:mb-6 animate-fade-up-delay-2"
+            class="font-serif text-2xl sm:text-5xl md:text-6xl leading-[1.1] text-white mb-4 lg:mb-6 animate-fade-up-delay-2 text-balance"
             v-html="slide.title">
           </h1>
           <p class="text-white/80 text-xs sm:text-base md:text-lg leading-relaxed mb-6 lg:mb-10 font-light max-w-md animate-fade-up-delay-3">
@@ -87,7 +88,7 @@ onUnmounted(() => clearInterval(timer))
              border border-white/10 shadow-2xl"  :style="{ background: slide.photoGradient }">
 
 
-              <img src="/maTof.jpeg" class="w-full h-full object-cover" alt="Portrait de Toure Fadilatou Mariam"> 
+              <LazyImage src="/maTof.jpeg" alt="Portrait de Toure Fadilatou Mariam" cover rounded="3xl" lazy/> 
             <!-- <div class="w-full h-full flex flex-col items-center justify-center gap-3 text-white/20">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>

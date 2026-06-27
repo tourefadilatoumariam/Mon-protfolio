@@ -100,11 +100,14 @@
                 </div>
               </div>
               <div class="shrink-0">
-                <img
+                <LazyImage
                   src="/maTof.jpeg"
-                  class="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-[#c98098] object-cover shadow-sm"
                   alt="Portrait de Touré Fadilatou Mariam"
-                >
+                  cover
+                  lazy
+                  rounded="xl"
+                  placeholder-bg="linear-gradient(135deg, #f3e5e5 0%, #e8c4c4 100%)"
+                />
               </div>
             </div>
 
@@ -297,6 +300,8 @@
 </template>
 
 <script setup>
+import LazyImage from './LazyImage.vue'
+
 defineProps({
   isOpen: {
     type: Boolean,

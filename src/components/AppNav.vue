@@ -33,9 +33,10 @@
 
       <!-- Burger (mobile) -->
       <button
-        class="md:hidden flex flex-col gap-1.5 p-1"
-        @click="menuOpen = !menuOpen"
+        class="md:hidden flex flex-col gap-1.5 p-1 relative z-50"
+        @click="toggleMenu"
         aria-label="Menu"
+        :aria-expanded="menuOpen"
       >
         <span
           class="block w-5 h-px bg-white/60 transition-all duration-300"
@@ -51,6 +52,13 @@
         ></span>
       </button>
     </div>
+
+    <!-- Mobile overlay -->
+    <div
+      class="nav-overlay md:hidden"
+      :class="{ active: menuOpen }"
+      @click="menuOpen = false"
+    ></div>
 
     <!-- Mobile drawer -->
     <transition
@@ -71,13 +79,13 @@
           :key="link.href"
           :href="link.href"
           class="text-sm text-white/50 hover:text-white transition-colors py-1"
-          @click="menuOpen = false"
+          @click="closeMenu"
         >{{ link.label }}</a>
         <a
           href="#contact"
           class="mt-2 text-center text-sm font-medium px-5 py-2.5 rounded-full
                  bg-rose/15 text-rose border border-rose/30"
-          @click="menuOpen = false"
+          @click="closeMenu"
         >Me contacter</a>
       </div>
     </transition>
@@ -93,15 +101,36 @@ defineProps({ activeSection: { type: String, default: 'home' } })
 const menuOpen = ref(false)
 const isScrolled = ref(false)
 
+const toggleMenu = () => {
+  menuOpen.value = !menuOpen.value
+  document.body.classList.toggle('menu-open', menuOpen.value)
+}
+
+const closeMenu = () => {
+  menuOpen.value = false
+  document.body.classList.remove('menu-open')
+}
+
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('resize', handleResize)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', handleResize)
+  if (menuOpen.value) {
+    document.body.classList.remove('menu-open')
+  }
 })
+
+function handleResize() {
+  if (menuOpen.value && window.innerWidth >= 768) {
+    closeMenu()
+  }
+}
 </script>

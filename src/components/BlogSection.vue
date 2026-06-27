@@ -21,12 +21,13 @@
             class="relative h-44 overflow-hidden"
             :aria-label="post.title"
           >
-            <img
+            <LazyImage
               :src="post.image"
               :alt="post.title"
-              class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-              loading="lazy"
-            >
+              cover
+              lazy
+              placeholder-bg="linear-gradient(135deg, #1a1419 0%, #2a1f26 100%)"
+            />
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a1419] via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-rose text-[#0e0c0d] text-[10px] font-bold px-3 py-1.5 rounded-lg">
               {{ post.date }}
@@ -57,6 +58,7 @@
 
 <script setup>
 import { posts } from '../data/portfolio.js'
+import LazyImage from './LazyImage.vue'
 
 function isExternal(link) {
   return link.startsWith('http')
