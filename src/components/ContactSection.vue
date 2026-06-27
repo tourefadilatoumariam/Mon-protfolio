@@ -68,21 +68,84 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="flex flex-col gap-1.5">
             <label class="form-label">Prenom <span class="text-rose">*</span></label>
-            <input v-model.trim="form.firstName" type="text" placeholder="Fadilatou" class="form-input" :class="{ 'border-red-500/50 focus:border-red-500/70': errors.firstName }" @blur="validate('firstName')" />
-            <span v-if="errors.firstName" class="text-[11px] text-red-400">{{ errors.firstName }}</span>
+            <div class="relative">
+              <input
+                v-model.trim="form.firstName"
+                type="text"
+                placeholder="Fadilatou"
+                class="form-input transition-all duration-300"
+                :class="{
+                  '!border-red-500/50 focus:!ring-red-500/20 focus:!border-red-500/70': errors.firstName && touched.firstName,
+                  '!border-emerald-500/30 focus:!ring-emerald-500/20 focus:!border-emerald-500/50': !errors.firstName && touched.firstName && form.firstName
+                }"
+                @blur="validate('firstName')"
+                @input="touched.firstName && validate('firstName')"
+              />
+              <span v-if="!errors.firstName && touched.firstName && form.firstName" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+            </div>
+            <transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition duration-150 ease-in" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
+              <span v-if="errors.firstName && touched.firstName" class="text-[11px] text-red-400 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                {{ errors.firstName }}
+              </span>
+            </transition>
           </div>
 
           <div class="flex flex-col gap-1.5">
             <label class="form-label">Nom <span class="text-rose">*</span></label>
-            <input v-model.trim="form.lastName" type="text" placeholder="Toure" class="form-input" :class="{ 'border-red-500/50 focus:border-red-500/70': errors.lastName }" @blur="validate('lastName')" />
-            <span v-if="errors.lastName" class="text-[11px] text-red-400">{{ errors.lastName }}</span>
+            <div class="relative">
+              <input
+                v-model.trim="form.lastName"
+                type="text"
+                placeholder="Toure"
+                class="form-input transition-all duration-300"
+                :class="{
+                  '!border-red-500/50 focus:!ring-red-500/20 focus:!border-red-500/70': errors.lastName && touched.lastName,
+                  '!border-emerald-500/30 focus:!ring-emerald-500/20 focus:!border-emerald-500/50': !errors.lastName && touched.lastName && form.lastName
+                }"
+                @blur="validate('lastName')"
+                @input="touched.lastName && validate('lastName')"
+              />
+              <span v-if="!errors.lastName && touched.lastName && form.lastName" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+            </div>
+            <transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition duration-150 ease-in" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
+              <span v-if="errors.lastName && touched.lastName" class="text-[11px] text-red-400 flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                {{ errors.lastName }}
+              </span>
+            </transition>
           </div>
         </div>
 
         <div class="flex flex-col gap-1.5">
           <label class="form-label">Email <span class="text-rose">*</span></label>
-          <input v-model.trim="form.email" type="email" placeholder="votre@email.com" class="form-input" :class="{ 'border-red-500/50 focus:border-red-500/70': errors.email }" @blur="validate('email')" />
-          <span v-if="errors.email" class="text-[11px] text-red-400">{{ errors.email }}</span>
+          <div class="relative">
+            <input
+              v-model.trim="form.email"
+              type="email"
+              placeholder="votre@email.com"
+              class="form-input transition-all duration-300"
+              :class="{
+                '!border-red-500/50 focus:!ring-red-500/20 focus:!border-red-500/70': errors.email && touched.email,
+                '!border-emerald-500/30 focus:!ring-emerald-500/20 focus:!border-emerald-500/50': !errors.email && touched.email && form.email
+              }"
+              @blur="validate('email')"
+              @input="touched.email && validate('email')"
+            />
+            <span v-if="!errors.email && touched.email && form.email" class="absolute right-3.5 top-1/2 -translate-y-1/2 text-emerald-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            </span>
+          </div>
+          <transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition duration-150 ease-in" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
+            <span v-if="errors.email && touched.email" class="text-[11px] text-red-400 flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              {{ errors.email }}
+            </span>
+          </transition>
         </div>
 
         <div class="flex flex-col gap-1.5">
@@ -95,20 +158,46 @@
             Message <span class="text-rose">*</span>
             <span class="ml-auto text-white/20 font-normal normal-case">{{ form.message.length }} / 500</span>
           </label>
-          <textarea v-model="form.message" rows="5" maxlength="500" placeholder="Decrivez votre besoin ou votre opportunite..." class="form-input resize-none" :class="{ 'border-red-500/50 focus:border-red-500/70': errors.message }" @blur="validate('message')"></textarea>
-          <span v-if="errors.message" class="text-[11px] text-red-400">{{ errors.message }}</span>
+          <div class="relative">
+            <textarea
+              v-model="form.message"
+              rows="5"
+              maxlength="500"
+              placeholder="Decrivez votre besoin ou votre opportunite..."
+              class="form-input resize-none transition-all duration-300"
+              :class="{
+                '!border-red-500/50 focus:!ring-red-500/20 focus:!border-red-500/70': errors.message && touched.message,
+                '!border-emerald-500/30 focus:!ring-emerald-500/20 focus:!border-emerald-500/50': !errors.message && touched.message && form.message
+              }"
+              @blur="validate('message')"
+              @input="touched.message && validate('message')"
+            ></textarea>
+            <span v-if="!errors.message && touched.message && form.message.length >= 20" class="absolute right-3.5 bottom-3.5 text-emerald-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            </span>
+          </div>
+          <transition enter-active-class="transition duration-200 ease-out" enter-from-class="opacity-0 -translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition duration-150 ease-in" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 -translate-y-1">
+            <span v-if="errors.message && touched.message" class="text-[11px] text-red-400 flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              {{ errors.message }}
+            </span>
+          </transition>
         </div>
 
         <transition enter-active-class="transition-all duration-300" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition-all duration-200" leave-from-class="opacity-100" leave-to-class="opacity-0">
           <div v-if="sent" class="flex items-center gap-3 bg-emerald-400/10 border border-emerald-400/25 rounded-xl px-4 py-3">
-            <span class="text-emerald-400 text-sm font-medium">Message prepare. Votre application mail va s'ouvrir.</span>
+            <span class="text-emerald-400 text-sm font-medium">Message préparé avec succès. Votre application de messagerie va s'ouvrir.</span>
           </div>
         </transition>
 
         <div class="flex items-center justify-between gap-4 mt-1">
           <span class="text-[11px] text-white/20 font-light">* champs obligatoires</span>
-          <button type="submit" :disabled="loading" class="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed bg-rose text-white/70 hover:bg-rose2">
-            <span>{{ loading ? 'Preparation...' : 'Envoyer' }}</span>
+          <button type="submit" :disabled="loading" class="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold transition-all active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed bg-rose text-[#0e0c0d] hover:bg-rose2">
+            <svg v-if="loading" class="animate-spin -ml-1 mr-1 h-4 w-4 text-[#0e0c0d]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>{{ loading ? 'Préparation...' : 'Envoyer le message' }}</span>
           </button>
         </div>
       </form>
@@ -138,10 +227,18 @@ const errors = reactive({
   message: '',
 })
 
+const touched = reactive({
+  firstName: false,
+  lastName: false,
+  email: false,
+  message: false,
+})
+
 function validate(field) {
+  touched[field] = true
   switch (field) {
     case 'firstName':
-      errors.firstName = form.firstName.length > 0 ? '' : 'Le prenom est requis.'
+      errors.firstName = form.firstName.length > 0 ? '' : 'Le prénom est requis.'
       break
     case 'lastName':
       errors.lastName = form.lastName.length > 0 ? '' : 'Le nom est requis.'
@@ -154,13 +251,16 @@ function validate(field) {
     case 'message':
       errors.message = form.message.trim().length >= 20
         ? ''
-        : 'Message trop court, 20 caracteres minimum.'
+        : 'Message trop court, 20 caractères minimum.'
       break
   }
 }
 
 function validateAll() {
-  ;['firstName', 'lastName', 'email', 'message'].forEach(validate)
+  ;['firstName', 'lastName', 'email', 'message'].forEach(f => {
+    touched[f] = true
+    validate(f)
+  })
   return !Object.values(errors).some(e => e !== '')
 }
 
@@ -168,6 +268,9 @@ async function handleSubmit() {
   if (!validateAll()) return
 
   loading.value = true
+  // Simulate API loading or slight delay for UI richness
+  await new Promise(resolve => setTimeout(resolve, 800))
+  
   const subject = encodeURIComponent(form.subject || 'Contact depuis le portfolio')
   const body = encodeURIComponent(
     `Bonjour Fadilatou,\n\n${form.message}\n\n${form.firstName} ${form.lastName}\n${form.email}`
@@ -177,7 +280,11 @@ async function handleSubmit() {
   loading.value = false
   sent.value = true
 
+  // Reset form
   Object.keys(form).forEach(k => (form[k] = ''))
+  // Reset validation state
+  Object.keys(touched).forEach(k => (touched[k] = false))
+  
   setTimeout(() => (sent.value = false), 6000)
 }
 </script>

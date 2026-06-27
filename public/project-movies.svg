@@ -1,11 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#111827"/>
-  <rect x="135" y="110" width="930" height="580" rx="36" fill="#fff" opacity=".08"/>
-  <rect x="200" y="170" width="260" height="390" rx="26" fill="#d4a0b0" opacity=".65"/>
-  <rect x="505" y="170" width="205" height="170" rx="24" fill="#fff" opacity=".15"/>
-  <rect x="750" y="170" width="205" height="170" rx="24" fill="#fff" opacity=".15"/>
-  <rect x="505" y="390" width="450" height="70" rx="22" fill="#fff" opacity=".13"/>
-  <rect x="505" y="500" width="300" height="42" rx="21" fill="#a0d4b4" opacity=".75"/>
-  <circle cx="330" cy="365" r="78" fill="none" stroke="#fff" stroke-width="28" opacity=".52"/>
-  <text x="200" y="635" fill="#fff" font-family="Inter, Arial" font-size="54" font-weight="700">Movie App</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Movies project</title>
+  <desc id="desc">Streaming catalog cards with a cinema feel.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#2a3b4f"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="110" y="100" width="980" height="600" rx="30" fill="#0f172a" stroke="#334155" stroke-width="2"/>
+  <rect x="160" y="145" width="360" height="50" rx="16" fill="#d4a0cf"/>
+  <rect x="540" y="145" width="200" height="18" rx="9" fill="#374151"/>
+  <g fill="#1f2937">
+    <rect x="160" y="230" width="220" height="310" rx="24"/>
+    <rect x="400" y="230" width="220" height="310" rx="24"/>
+    <rect x="640" y="230" width="220" height="310" rx="24"/>
+    <rect x="880" y="230" width="220" height="310" rx="24"/>
+  </g>
+  <rect x="190" y="255" width="160" height="210" rx="16" fill="#d4a0b0"/>
+  <rect x="430" y="255" width="160" height="210" rx="16" fill="#a0b4d4"/>
+  <rect x="670" y="255" width="160" height="210" rx="16" fill="#a0d4b4"/>
+  <rect x="910" y="255" width="160" height="210" rx="16" fill="#f2c27b"/>
+  <rect x="190" y="490" width="160" height="16" rx="8" fill="#94a3b8"/>
+  <rect x="430" y="490" width="160" height="16" rx="8" fill="#94a3b8"/>
+  <rect x="670" y="490" width="160" height="16" rx="8" fill="#94a3b8"/>
+  <rect x="910" y="490" width="160" height="16" rx="8" fill="#94a3b8"/>
+  <circle cx="600" cy="620" r="26" fill="#d4a0b0"/>
 </svg>

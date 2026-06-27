@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Responsive web design</title>
+  <desc id="desc">Professional responsive layout with desktop, tablet, and mobile views.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#061019"/>
+      <stop offset="100%" stop-color="#152b43"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="100" y="100" width="1000" height="600" rx="34" fill="#0d1724" stroke="#27445f" stroke-width="2"/>
+  <rect x="152" y="144" width="896" height="54" rx="16" fill="#122033"/>
+  <rect x="184" y="162" width="120" height="10" rx="5" fill="#6ee7ff"/>
+  <rect x="324" y="162" width="150" height="10" rx="5" fill="#8b7dff"/>
+  <rect x="494" y="162" width="100" height="10" rx="5" fill="#ff7db8"/>
+  <rect x="152" y="232" width="520" height="388" rx="24" fill="#101b2b"/>
+  <rect x="704" y="232" width="240" height="388" rx="24" fill="#101b2b"/>
+  <rect x="972" y="232" width="84" height="388" rx="24" fill="#101b2b"/>
+  <rect x="192" y="276" width="180" height="128" rx="20" fill="#132235"/>
+  <rect x="392" y="276" width="220" height="128" rx="20" fill="#13283d"/>
+  <rect x="192" y="424" width="420" height="166" rx="20" fill="#15283f"/>
+  <path d="M230 544h120l40-60 58 28 42-52 50 18" fill="none" stroke="#6ee7ff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="736" y="270" width="160" height="20" rx="10" fill="#6ee7ff"/>
+  <rect x="736" y="306" width="120" height="14" rx="7" fill="#d4a0b0"/>
+  <rect x="736" y="338" width="132" height="14" rx="7" fill="#a0d4b4"/>
+  <rect x="736" y="370" width="170" height="14" rx="7" fill="#ffd166"/>
+  <rect x="736" y="410" width="96" height="14" rx="7" fill="#6ee7ff"/>
+  <rect x="736" y="446" width="140" height="14" rx="7" fill="#d4a0b0"/>
+  <rect x="736" y="492" width="108" height="14" rx="7" fill="#a0d4b4"/>
+  <rect x="736" y="536" width="160" height="14" rx="7" fill="#6ee7ff"/>
+  <path d="M972 270h28v300h-28z" fill="#d4a0b0"/>
+</svg>

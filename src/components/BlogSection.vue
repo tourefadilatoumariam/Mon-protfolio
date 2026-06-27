@@ -1,32 +1,52 @@
 <template>
   <section id="blog" class="bg-[#130f12] px-6 sm:px-10 py-20 md:py-28">
     <div class="max-w-6xl mx-auto">
-      <p class="sec-label">Articles</p>
-      <h2 class="sec-title">Blog & apprentissages</h2>
-      <div class="sec-divider"></div>
+      <div class="max-w-3xl">
+        <p class="sec-label">Articles</p>
+        <h2 class="sec-title">Blog & apprentissages</h2>
+       
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <article
           v-for="(post, i) in posts"
           :key="post.title"
           v-reveal="{ delay: i * 100 }"
-          class="group bg-[#1a1419] border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 hover:shadow-[0_16px_48px_rgba(0,0,0,.4)] transition-all duration-300"
+          class="group flex min-h-[380px] flex-col overflow-hidden rounded-2xl border border-white/6 bg-[#1a1419] transition-all duration-300 hover:-translate-y-2 hover:border-rose/20 hover:shadow-[0_16px_48px_rgba(0,0,0,.38)]"
         >
-          <div class="h-44 md:h-48 relative overflow-hidden" :style="{ background: post.bg }">
+          <a
+            :href="post.link"
+            :target="isExternal(post.link) ? '_blank' : undefined"
+            :rel="isExternal(post.link) ? 'noopener noreferrer' : undefined"
+            class="relative h-44 overflow-hidden"
+            :aria-label="post.title"
+          >
+            <img
+              :src="post.image"
+              :alt="post.title"
+              class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#1a1419] via-transparent to-transparent"></div>
             <span class="absolute top-4 left-4 bg-rose text-[#0e0c0d] text-[10px] font-bold px-3 py-1.5 rounded-lg">
               {{ post.date }}
             </span>
-          </div>
+          </a>
 
-          <div class="p-5 md:p-6">
-            <p class="text-[10px] font-bold tracking-widest uppercase text-rose mb-2">{{ post.cat }}</p>
-            <h3 class="font-semibold text-white text-[15px] leading-snug mb-3">{{ post.title }}</h3>
-            <p class="text-white/70 text-sm leading-relaxed">{{ post.excerpt }}</p>
+          <div class="flex flex-1 flex-col justify-between p-5 md:p-6">
+            <div>
+              <p class="text-[10px] font-bold tracking-widest uppercase text-rose mb-2">{{ post.cat }}</p>
+              <h3 class="font-semibold text-white text-lg leading-snug mb-3">{{ post.title }}</h3>
+              <p class="text-white/70 text-sm leading-relaxed">{{ post.excerpt }}</p>
+            </div>
+
             <a
-              href="#contact"
-              class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-rose group-hover:gap-2 transition-all"
+              :href="post.link"
+              :target="isExternal(post.link) ? '_blank' : undefined"
+              :rel="isExternal(post.link) ? 'noopener noreferrer' : undefined"
+              class="inline-flex items-center gap-1 mt-6 text-sm font-semibold text-rose group-hover:gap-2 transition-all"
             >
-              En parler <span aria-hidden="true">-&gt;</span>
+              {{ isExternal(post.link) ? 'Voir sur LinkedIn' : 'Me contacter' }}<span aria-hidden="true">-&gt;</span>
             </a>
           </div>
         </article>
@@ -37,4 +57,8 @@
 
 <script setup>
 import { posts } from '../data/portfolio.js'
+
+function isExternal(link) {
+  return link.startsWith('http')
+}
 </script>

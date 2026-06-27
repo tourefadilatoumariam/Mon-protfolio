@@ -1,11 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="#1c1010"/>
-  <rect x="135" y="105" width="930" height="590" rx="38" fill="#fff" opacity=".09"/>
-  <rect x="195" y="165" width="230" height="470" rx="28" fill="#fff" opacity=".12"/>
-  <rect x="465" y="165" width="540" height="120" rx="28" fill="#d4a0b0" opacity=".68"/>
-  <rect x="465" y="325" width="250" height="250" rx="28" fill="#fff" opacity=".13"/>
-  <rect x="755" y="325" width="250" height="250" rx="28" fill="#fff" opacity=".13"/>
-  <circle cx="590" cy="450" r="70" fill="none" stroke="#a0d4b4" stroke-width="28"/>
-  <path d="M820 500l70-100 55 70" stroke="#a0b4d4" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="195" y="665" fill="#fff" font-family="Inter, Arial" font-size="54" font-weight="700">Yowl UI</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Yowl project</title>
+  <desc id="desc">Finance style analytics interface with charts and data blocks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#241b12"/><stop offset="100%" stop-color="#42301f"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="110" y="100" width="980" height="600" rx="30" fill="#111827" stroke="#6b7280" stroke-width="2"/>
+  <rect x="150" y="145" width="250" height="38" rx="14" fill="#d4c0a0"/>
+  <rect x="420" y="145" width="180" height="18" rx="9" fill="#374151"/>
+  <rect x="420" y="175" width="120" height="18" rx="9" fill="#374151"/>
+  <g fill="#1f2937">
+    <rect x="150" y="230" width="280" height="190" rx="24"/>
+    <rect x="450" y="230" width="280" height="190" rx="24"/>
+    <rect x="750" y="230" width="280" height="190" rx="24"/>
+    <rect x="150" y="445" width="410" height="205" rx="24"/>
+    <rect x="580" y="445" width="450" height="205" rx="24"/>
+  </g>
+  <path d="M190 358h70l40-70 50 40 40-55 60 18" fill="none" stroke="#a0d4b4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="270" cy="298" r="40" fill="#d4a0b0"/>
+  <circle cx="570" cy="298" r="40" fill="#a0b4d4"/>
+  <circle cx="870" cy="298" r="40" fill="#f2c27b"/>
+  <rect x="190" y="510" width="320" height="18" rx="9" fill="#334155"/>
+  <rect x="190" y="545" width="250" height="18" rx="9" fill="#334155"/>
+  <rect x="620" y="510" width="320" height="18" rx="9" fill="#334155"/>
+  <rect x="620" y="545" width="250" height="18" rx="9" fill="#334155"/>
+  <rect x="620" y="580" width="290" height="18" rx="9" fill="#334155"/>
 </svg>

@@ -88,41 +88,59 @@
         </p>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-7">
+          <div
+            v-for="item in skillHighlights"
+            :key="item"
+            class="bg-[#1a1419]/50 rounded-xl p-4 border border-white/5 hover:border-rose/20 transition-all duration-300"
+          >
+            <div class="text-[10px] text-white/30 uppercase tracking-widest mb-1 font-semibold">Point fort</div>
+            <div class="text-sm font-medium text-white/80">{{ item }}</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
           <div class="bg-[#1a1419]/50 rounded-xl p-4 border border-white/5 hover:border-rose/20 transition-all duration-300">
             <div class="text-[10px] text-white/30 uppercase tracking-widest mb-1 font-semibold">Localisation</div>
             <div class="text-sm font-medium text-white/80">Abidjan, Cote d'Ivoire</div>
           </div>
           <div class="bg-[#1a1419]/50 rounded-xl p-4 border border-white/5 hover:border-rose/20 transition-all duration-300">
-            <div class="text-[10px] text-white/30 uppercase tracking-widest mb-1 font-semibold">Disponibilite</div>
-            <div class="text-sm font-medium text-emerald-400">Disponible maintenant</div>
-          </div>
-          <div class="bg-[#1a1419]/50 rounded-xl p-4 border border-white/5 hover:border-rose/20 transition-all duration-300">
             <div class="text-[10px] text-white/30 uppercase tracking-widest mb-1 font-semibold">Recherche</div>
             <div class="text-sm font-medium text-white/80">Stage, alternance, junior</div>
           </div>
-          <div class="bg-[#1a1419]/50 rounded-xl p-4 border border-white/5 hover:border-rose/20 transition-all duration-300">
-            <div class="text-[10px] text-white/30 uppercase tracking-widest mb-1 font-semibold">Mode</div>
-            <div class="text-sm font-medium text-white/80">Sur site ou teletravail</div>
-          </div>
         </div>
 
-        <button
-          @click="downloadCV"
-          class="inline-flex items-center gap-2 mt-7 px-6 py-3 bg-rose text-[#0e0c0d] rounded-full text-sm font-bold cursor-pointer hover:bg-rose2 hover:shadow-[0_8px_25px_rgba(212,160,176,0.3)] active:scale-95 transition-all duration-300"
-        >
-          Telecharger le CV <span aria-hidden="true">-&gt;</span>
-        </button>
+        <div class="flex flex-wrap items-center gap-3.5 mt-7">
+          <button
+            @click="cvModalOpen = true"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-rose text-[#0e0c0d] rounded-full text-sm font-bold cursor-pointer hover:bg-rose2 hover:shadow-[0_8px_25px_rgba(212,160,176,0.3)] active:scale-95 transition-all duration-300"
+          >
+            Consulter mon CV <span aria-hidden="true">-&gt;</span>
+          </button>
+          
+          <button
+            @click="downloadCV"
+            class="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full text-sm font-medium cursor-pointer hover:bg-white/8 active:scale-95 transition-all duration-300"
+          >
+            Télécharger PDF
+          </button>
+        </div>
       </div>
     </div>
+
+    <!-- CV Modal -->
+    <InteractiveCvModal :isOpen="cvModalOpen" @close="cvModalOpen = false" />
   </section>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
-import { skills, skillCategories } from '../data/portfolio.js'
+import { skills, skillCategories, skillHighlights } from '../data/portfolio.js'
 import { downloadCV } from '../utils/cv.js'
+import InteractiveCvModal from './InteractiveCvModal.vue'
 
 const activeCategory = ref('Tous')
+const cvModalOpen = ref(false)
+
 const filteredSkills = computed(() =>
   activeCategory.value === 'Tous'
     ? skills

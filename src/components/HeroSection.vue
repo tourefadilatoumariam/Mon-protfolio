@@ -2,8 +2,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { slides } from '../data/portfolio.js'
 import { downloadCV } from '../utils/cv.js'
+import InteractiveCvModal from './InteractiveCvModal.vue'
 
 const current = ref(0)
+const cvModalOpen = ref(false)
 let timer
 
 onMounted(() => {
@@ -54,7 +56,7 @@ onUnmounted(() => clearInterval(timer))
             <!-- CTA 1 -->
             <button
               v-if="slide.cta1.isCv"
-              @click="downloadCV"
+              @click="cvModalOpen = true"
               class="px-7 py-3.5 rounded-full bg-rose text-[#0e0c0d] text-sm font-bold cursor-pointer
                      hover:bg-rose2 active:scale-95 transition-all">{{ slide.cta1.label }}</button>
             <a
@@ -66,7 +68,7 @@ onUnmounted(() => clearInterval(timer))
             <!-- CTA 2 -->
             <button
               v-if="slide.cta2.isCv"
-              @click="downloadCV"
+              @click="cvModalOpen = true"
               class="px-7 py-3.5 rounded-full border border-white/25 text-white text-sm font-medium cursor-pointer
                      hover:bg-white/8 active:scale-95 transition-all"
             >{{ slide.cta2.label }}</button>
@@ -113,4 +115,7 @@ onUnmounted(() => clearInterval(timer))
       {{ String(current + 1).padStart(2, '0') }} / {{ String(slides.length).padStart(2, '0') }}
     </span>
   </section>
+
+  <!-- CV Modal -->
+  <InteractiveCvModal :isOpen="cvModalOpen" @close="cvModalOpen = false" />
 </template>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Developer at work</title>
+  <desc id="desc">A professional developer at a desk with code editor screens.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#08111b"/>
+      <stop offset="100%" stop-color="#17314a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="995" cy="120" r="86" fill="#ffd166" opacity="0.82"/>
+  <rect x="125" y="110" width="950" height="580" rx="34" fill="#0d1724" stroke="#2c4761" stroke-width="2"/>
+  <rect x="160" y="150" width="560" height="360" rx="24" fill="#101b2b"/>
+  <rect x="750" y="150" width="290" height="360" rx="24" fill="#101b2b"/>
+  <path d="M210 230h320M210 280h400M210 330h250M210 380h350" stroke="#6ee7ff" stroke-width="14" stroke-linecap="round"/>
+  <path d="M790 214h180M790 262h150M790 310h190M790 358h110M790 406h160" stroke="#ff7db8" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+  <g transform="translate(390 380)">
+    <circle cx="0" cy="0" r="58" fill="#d79f7f"/>
+    <path d="M-48 -8c8-44 34-74 60-74 30 0 55 30 61 74-12 25-33 37-61 37s-48-12-60-37z" fill="#1d1b22"/>
+    <path d="M-72 94c16-62 52-94 72-94s56 32 72 94" fill="#5c3d31"/>
+  </g>
+  <rect x="320" y="462" width="240" height="40" rx="20" fill="#1b1d23"/>
+  <rect x="285" y="516" width="310" height="54" rx="22" fill="#1f2937"/>
+  <rect x="810" y="214" width="130" height="20" rx="10" fill="#6ee7ff"/>
+  <rect x="810" y="246" width="180" height="16" rx="8" fill="#d4a0b0"/>
+  <rect x="810" y="286" width="210" height="16" rx="8" fill="#a0d4b4"/>
+  <rect x="810" y="326" width="156" height="16" rx="8" fill="#ffd166"/>
+  <rect x="810" y="366" width="190" height="16" rx="8" fill="#6ee7ff"/>
+  <rect x="810" y="406" width="120" height="16" rx="8" fill="#ff7db8"/>
+  <path d="M128 670h944" stroke="#27445f" stroke-width="2"/>
+</svg>
