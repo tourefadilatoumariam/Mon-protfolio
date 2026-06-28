@@ -12,7 +12,7 @@ let timer
 onMounted(() => {
   timer = setInterval(() => {
     current.value = (current.value + 1) % slides.length
-  }, 5000)
+  }, 8000)
 })
 onUnmounted(() => clearInterval(timer))
 </script>
@@ -37,8 +37,8 @@ onUnmounted(() => clearInterval(timer))
 
         <div class="relative z-10 px-6 sm:px-12 md:px-20 max-w-2xl animate-fade-up">
           <!-- Photo de profil sur mobile -->
-          <div class="lg:hidden mb-5">
-            <div class="w-20 h-20 rounded-2xl overflow-hidden border border-white/15 shadow-xl" :style="{ background: slide.photoGradient }">
+          <div class="lg:hidden mb-6">
+            <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden border border-white/20 shadow-2xl" :style="{ background: slide.photoGradient }">
               <LazyImage src="/maTof.jpeg" alt="Portrait de Toure Fadilatou Mariam" cover rounded="2xl" lazy/>
             </div>
           </div>
@@ -70,8 +70,8 @@ onUnmounted(() => clearInterval(timer))
             <button
               v-if="slide.cta2.isCv"
               @click="cvModalOpen = true"
-              class="px-7 py-3.5 rounded-full border border-white/25 text-white text-sm font-medium cursor-pointer
-                     hover:bg-white/8 active:scale-95 transition-all"
+              class="px-7 py-3.5 rounded-full border border-rose/40 text-rose text-sm font-bold cursor-pointer
+                     hover:bg-rose/10 active:scale-95 transition-all"
             >{{ slide.cta2.label }}</button>
             <a
               v-else
@@ -86,7 +86,6 @@ onUnmounted(() => clearInterval(timer))
           <div
             class="w-64 h-80 xl:w-72 xl:h-[340px] rounded-3xl overflow-hidden
              border border-white/10 shadow-2xl"  :style="{ background: slide.photoGradient }">
-
 
               <LazyImage src="/maTof.jpeg" alt="Portrait de Toure Fadilatou Mariam" cover rounded="3xl" lazy/> 
             <!-- <div class="w-full h-full flex flex-col items-center justify-center gap-3 text-white/20">

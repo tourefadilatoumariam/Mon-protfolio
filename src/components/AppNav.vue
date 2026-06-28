@@ -9,7 +9,7 @@
   >
     <!-- Logo -->
     <a href="#home" class="font-serif text-xl tracking-tight shrink-0">
-      <span class="text-rose">portfolio</span><span class="text-white/30">.</span>dev
+      <span class="text-rose">Fadi</span><span class="text-white/30">.</span>dev
     </a>
 
     <!-- Desktop links -->

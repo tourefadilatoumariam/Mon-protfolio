@@ -13,7 +13,7 @@
       @click.self="closeModal"
     >
       <div
-        class="relative w-full max-w-4xl bg-white text-gray-900 rounded-2xl shadow-2xl overflow-hidden my-8 max-h-[90vh] flex flex-col animate-scale-up"
+        class="relative w-full max-w-4xl bg-white text-gray-900 rounded-2xl shadow-2xl my-8 max-h-[90vh] flex flex-col animate-scale-up overflow-y-auto"
       >
         <!-- Modal Toolbar -->
         <div class="flex items-center justify-between px-6 py-4 bg-gray-50 border-b border-gray-100 shrink-0">
