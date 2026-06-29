@@ -28,7 +28,7 @@ export const slides = [
     accent: '#d4a0b0',
     photoGradient: 'linear-gradient(160deg,#2d1525,#4a1f35)',
     cta1: { label: 'Voir mes projets', href: '#portfolio' },
-    cta2: { label: 'Telecharger mon CV', href: '#cv', isCv: true },
+    cta2: { label: 'Telecharger mon CV', download: true },
   },
   {
     tag: 'Disponible a Abidjan et a distance',
@@ -116,7 +116,7 @@ export const projects = [
     desc: "Dashboard d'administration et de gestion financière avec des graphiques interactifs pour le suivi des transactions et soldes. Redesign ergonomique complet.",
     stack: ['Figma', 'Laravel', 'Vue.js', 'MySQL'],
     status: 'Projet de groupe',
-    image: '',
+    image: '/project-yowl.png',
     liveUrl: '',
     accent: '#d4c0a0',
   },

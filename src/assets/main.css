@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
+@theme {
+  --color-bg: #0e0c0d;
+  --color-bg-alt: #130f12;
+  --color-bg-card: #1a1419;
+  --color-rose: #d4a0b0;
+  --color-rose-hover: #e8b4c2;
+  --color-white: #ffffff;
+  --color-white-35: rgba(255, 255, 255, 0.35);
+  --color-white-70: rgba(255, 255, 255, 0.7);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+}
+
 :root {
   --color-bg: #0e0c0d;
   --color-bg-alt: #130f12;

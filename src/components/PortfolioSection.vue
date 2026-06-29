@@ -22,7 +22,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <article
-          v-for="(proj, i) in paginatedProjects"
+          v-for="(proj, i) in visibleProjects"
           :key="proj.title"
           v-reveal="{ delay: i * 80 }"
           class="group overflow-hidden rounded-2xl border border-white/8 bg-[#1a1419] transition-all duration-300 hover:-translate-y-1 hover:border-rose/25 hover:shadow-[0_18px_50px_rgba(0,0,0,0.24)]"
@@ -34,13 +34,7 @@
             class="relative block aspect-[16/10] overflow-hidden"
             :aria-label="proj.title"
           >
-            <LazyImage
-              :src="proj.image"
-              :alt="proj.title"
-              cover
-              lazy
-              placeholder-bg="linear-gradient(135deg, #1a1419 0%, #2a1f26 100%)"
-            />
+                        <img v-if="proj.image" :src="proj.image" :alt="proj.title" class="w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#1a1419] via-transparent to-transparent"></div>
             <span class="absolute left-4 top-4 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-white/80 backdrop-blur">
               {{ proj.status }}
@@ -119,14 +113,32 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { projects, filterCategories } from '../data/portfolio.js'
-import LazyImage from './LazyImage.vue'
+
 
 const categories = filterCategories
 const active = ref('Tous')
 const currentPage = ref(1)
-const itemsPerPage = 4
+const isDesktop = ref(typeof window !== 'undefined' && window.innerWidth >= 1024)
+
+let resizeHandler
+
+onMounted(() => {
+  resizeHandler = () => {
+    isDesktop.value = window.innerWidth >= 1024
+    currentPage.value = 1
+  }
+  window.addEventListener('resize', resizeHandler)
+})
+
+onUnmounted(() => {
+  if (resizeHandler) {
+    window.removeEventListener('resize', resizeHandler)
+  }
+})
+
+const itemsPerPage = computed(() => isDesktop.value ? 100 : 4)
 
 watch(active, () => {
   currentPage.value = 1
@@ -136,16 +148,10 @@ function projectHref(project) {
   return project.liveUrl || '#contact'
 }
 
-const filteredProjects = computed(() =>
+const visibleProjects = computed(() =>
   active.value === 'Tous'
     ? projects
     : projects.filter(p => p.cat === active.value)
 )
-
-const totalPages = computed(() => Math.ceil(filteredProjects.value.length / itemsPerPage))
-
-const paginatedProjects = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage
-  return filteredProjects.value.slice(start, start + itemsPerPage)
-})
 </script>
+

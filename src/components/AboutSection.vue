@@ -112,7 +112,7 @@
         <div class="flex flex-wrap items-center gap-3.5 mt-7">
           <button
             @click="cvModalOpen = true"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-rose text-[#0e0c0d] rounded-full text-sm font-bold cursor-pointer hover:bg-rose2 hover:shadow-[0_8px_25px_rgba(212,160,176,0.3)] active:scale-95 transition-all duration-300"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-rose text-white rounded-full text-sm font-bold cursor-pointer hover:bg-rose2 hover:shadow-[0_8px_25px_rgba(212,160,176,0.3)] active:scale-95 transition-all duration-300"
           >
             Consulter mon CV <span aria-hidden="true">-&gt;</span>
           </button>

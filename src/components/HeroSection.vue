@@ -56,19 +56,30 @@ onUnmounted(() => clearInterval(timer))
           <div class="flex flex-wrap gap-3 lg:gap-4 animate-fade-up-delay-4">
             <!-- CTA 1 -->
             <button
-              v-if="slide.cta1.isCv"
+              v-if="slide.cta1.download"
+              @click="downloadCV"
+              class="px-7 py-3.5 rounded-full bg-rose text-white text-sm font-bold cursor-pointer
+                     hover:bg-rose2 active:scale-95 transition-all">{{ slide.cta1.label }}</button>
+            <button
+              v-else-if="slide.cta1.isCv"
               @click="cvModalOpen = true"
-              class="px-7 py-3.5 rounded-full bg-rose text-[#0e0c0d] text-sm font-bold cursor-pointer
+              class="px-7 py-3.5 rounded-full bg-rose text-white text-sm font-bold cursor-pointer
                      hover:bg-rose2 active:scale-95 transition-all">{{ slide.cta1.label }}</button>
             <a
               v-else
               :href="slide.cta1.href"
-              class="px-7 py-3.5 rounded-full bg-rose text-[#0e0c0d] text-sm font-bold
+              class="px-7 py-3.5 rounded-full bg-rose text-white text-sm font-bold
                      hover:bg-rose2 active:scale-95 transition-all">{{ slide.cta1.label }}</a>
 
             <!-- CTA 2 -->
             <button
-              v-if="slide.cta2.isCv"
+              v-if="slide.cta2.download"
+              @click="downloadCV"
+              class="px-7 py-3.5 rounded-full border border-rose/40 text-rose text-sm font-bold cursor-pointer
+                     hover:bg-rose/10 active:scale-95 transition-all"
+            >{{ slide.cta2.label }}</button>
+            <button
+              v-else-if="slide.cta2.isCv"
               @click="cvModalOpen = true"
               class="px-7 py-3.5 rounded-full border border-rose/40 text-rose text-sm font-bold cursor-pointer
                      hover:bg-rose/10 active:scale-95 transition-all"
